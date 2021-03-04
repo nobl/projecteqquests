@@ -11,11 +11,9 @@ sub EVENT_ENTERZONE
 	
 	if(!defined $qglobals{tutpop}) 
 	{
-		quest::popup("Join the revolution!", "Welcome to the Revolt! You have been given two new quests:
-			<br><br><c \"#FFFF00\">Rally with Rahtiz:</c><br>If you are ready to begin fighting for the revolt, 
-			hail Guard Rahtiz and see where you are needed.<br><br><c \"#FFFF00\">Basic Training:</c><br>If you 
-			would like more training on the finer points of Everquest, speak with Arias and he will direct you to other knowledgeable 
-			members of the slave revolt.<br><br><c \"#F07F00\">Click 'OK' to continue.</c>");
+		quest::popup("Schließ Dich der Revolution an!", "Willkommen bei der Revolte! Du hast zwei neue Quests erhalten:
+			<br><br><c \"#FFFF00\">Rally mit Rahtiz:</c><br>Wenn du bereit bist, für die Revolte zu kämpfen, 
+			grüße Wächter Rahtiz und finde heraus, wo Du gebraucht wirst.<br><br><c \"#FFFF00\">Grundausbildung:</c><br>Wenn Du mehr über die Feinheiten von Everquest lernen möchtest, sprich mit Arias und er wird dich an andere sachkundige Mitglieder der Sklavenrevolte verweisen.<br><br><c \"#F07F00\">Klicke auf 'OK', um fortzufahren.</c>");
 			quest::assigntask(22);
 			quest::assigntask(23);
 			quest::setglobal("tutpop",1,1,"D30");
@@ -23,7 +21,7 @@ sub EVENT_ENTERZONE
 	
 	if($ulevel > 15 && $status < 80)
 	{
-		$client->Message(15,"You are too high in level to be in this zone.");
+		$client->Message(15,"Du bist zu hoch im Level, um in dieser Zone zu sein.");
 		quest::selfcast(2433);
 	}  
 }
@@ -31,57 +29,55 @@ sub EVENT_ENTERZONE
 
 sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjusted at later time, I just browsed greens -Drogerin
 	if ($popupid == 111) { 
-		quest::popup("Maps", "<br><br> <c \"#94f000\"> Additional Map Features </c>  
-		<br><br> If you want to show or hide the visibility of floors above or below your current position, you can toggle the <c \"#00c8f0\"> Height Filter </c> button. When this button is activated, locations and items below a distance specified in the \"Low\" field won't be drawn. Likewise, anything above the \"High\" distance won't be drawn.
-		<br><br> To show or hide labels on the map, toggle the <c \"#00c8f0\"> Labels </c> button.
-		<br><br> If you are in a group and wish to find  members of your group on the map, activate the <c \"#00c8f0\"> Group </c> button. Group members will appear on the map as green <c \"#54f000\"> X</c>'s.");
+		quest::popup("Karsten", "<br><br> <c \"#94f000\"> Zusätzliche Kartenmerkmale </c>  
+		<br><br> Wenn Du die Sichtbarkeit von Ebenen über oder unter Deiner aktuellen Position ein- oder ausblenden möchtest, kannst Du die Schaltfläche <c \"#00c8f0\"> Height Filter </c> einschalten. Wenn diese Schaltfläche aktiviert ist, werden Orte und Elemente unterhalb eines im Feld \"Low" angegebenen Abstands nicht gezeichnet. Ebenso wird alles, was über dem Abstand \"High\" liegt, nicht gezeichnet.
+		<br><br> Um Beschriftungen auf der Karte ein- oder auszublenden, schalte die Schaltfläche <c \"#00c8f0\"> Labels </c> um.
+		<br><br> Wenn Du in einer Gruppe bist und die Mitglieder Deiner Gruppe auf der Karte sehen möchtest, aktiviere die Schaltfläche <c \"#00c8f0\"> Group </c>. Die Gruppenmitglieder erscheinen in der Karte als grünes <c \"#54f000\"> X</c>'s.");
 	}
 	if ($popupid == 1) {
-		quest::popup("Tradeskills", "<br> If the recipe you wish to create is not already in your list of known recipes, you can <c \"#83f07a\"> Experiment</c>.<br><br>
-		When you have open the  <c \"#1b6e14\"> Tradeskill </c> window, click on the <c \"#00c8f0\"> Experiment </c> button. This opens a  new window labeled with the name of the tradeskill container
-		in which you are experimenting -- Oven, in this case.<br><br> You can then place your ingredients intot he slots of the <c \"#1b6e14\"> Oven </c> window. For rat steaks, this requires the rat meat
-		and the cooking sauce.<br><br> When the ingredients are in the oven, click the <c \"#00c8f0\"> Combine </c> button. The ingredients will be consumed, and you will have a cooked rat steak.
-		<br><br><c \"#F07F00\"> Click 'OK' to learn about recipes and skill levels.",2);
+		quest::popup("Handwerkskunst", "<br> Wenn das Rezept, das Du erstellen möchtest, nicht bereits in Deiner Liste der bekannten Rezepte enthalten ist, kannst Du <c \"#83f07a\"> experimentieren</c>.<br><br>
+		Wenn Du das Fenster <c \"#1b6e14\"> Tradeskill </c> geöffnet hast, klicke auf die Schaltfläche <c \"#00c8f0\"> Experiment</c>. Dies öffnet ein neues Fenster mit dem Namen des Handwerks-Containers
+		in dem Du experimentierst - in diesem Fall Ofen.<br><br> Anschließend kannst Du Deine Zutaten in die Slots des Fensters <c \"#1b6e14\">Ofen </c> platzieren. Für Rattensteaks benötigst Du dazu das Rattenfleisch
+		und die Kochsauce.<br><br> Wenn die Zutaten im Ofen sind, klicke auf die Schaltfläche <c \"#00c8f0\"> Combine </c>. Die Zutaten werden verbraucht, und Du erhälst ein gekochtes Rattensteak.
+		<br><br><c \"#F07F00\"> Klicke auf 'OK', um mehr über Rezepte und Fähigkeitsstufen zu erfahren.",2);
 	}
 	if ($popupid == 2) {
-		quest::popup("Tradeskills", "<br> Some tradeskill recipes are more complicated than others, and require you to possess a higher tradeskill level in the tradeskill you are attempting
-		to practice.<br><br> If your level is not high enough to attempt a particular recipes, you will likely fail the combine. When this happens, you will often lose some or all of the ingredients
-		you used for the combine.<br><br><c \"#F07F00\"> Click 'OK' to learn about different types of tradeskills.",3);
+		quest::popup("Handwerkskunst", "<br> Einige Handwerksrezepte sind komplizierter als andere und erfordern eine höhere Stufe in dem Handwerk, das Du ausüben möchtest.
+		<br><br> Wenn Deine Stufe nicht hoch genug ist, um ein bestimmtes Rezept zu versuchen, wirst Du wahrscheinlich bei der Kombination scheitern. Wenn dies geschieht, verlierst Du oft einige oder alle Zutaten, die Du für die Kombination verwendet hast.
+		<br><br><c \"#F07F00\"> Klicke auf "OK", um mehr über die verschiedenen Arten von Handwerksfertigkeiten zu erfahren.",3);
 	}
 	if ($popupid == 3) {
-		quest::popup("Tradeskills", "<br> There are many different type of tradeskills that you can practice, including baking, pottery, fletching, blacksmithing, and weaving. You can create all
-		manner of items using these skills.<br><br> To perform the various types of tradeskills, you must use the correct types of tradeskill containers. For example, to perform baking, you need an oven.
-		Blacksmithing requires a forge. Pottery requires a kiln. Be on the lookout for different types of tradeskill containers located in the cities throughout Norrath.");
+		quest::popup("Handwerkskunst", "<br> Es gibt viele verschiedene Arten von Handwerksberufen, die Du ausüben kannst, einschließlich Backen, Töpfern, Pfeil und Bogen Bau, Schmieden und Schneidern. Du kannst alle möglichen Gegenstände mit diesen Fertigkeiten herstellen.
+		<br><br> Um die verschiedenen Arten von Handwerksberufen auszuüben, musst Du die richtigen Behälter für die Handwerksberufe verwenden. Für das Backen benötigen Sie zum Beispiel einen Ofen.
+		Schmieden erfordert eine Schmiede. Töpfern erfordert einen Brennofen. Halte Ausschau nach verschiedenen Arten von Handwerksfertigkeitsbehältern, die sich in den Städten in Norrath befinden.");
 	}
 	if ($popupid == 6) {
-		quest::popup("Managing Hotbars", "<br> There are multiple ways to adjust and manage your <c \"#83f07a\"> Hotbars:</c><br><br>
-		<c \"#1b6e14\">Cycling</c><br>You switch which particular page of the hotbar you are on by using the up and down arrows on the right-side of the bar.<br><br><c \"#1b6e14\">New Hotbars</c><br>
-		You can add new Hotbars by using your <c \"#83f07a\"> EQ Menu</c> button, selecting <c \"#83f07a\"> Actions,</c> a nd then choosing option <c \"#83f07a\"> Hotkeys </c> 1-10.<br><br>
-		<c \"#F07F00\"> Click 'OK' to learn managing your Hotbars.</c>",7);
+		quest::popup("Hotbars verwalten", "<br> Es gibt mehrere Möglichkeiten, Deine <c \"#83f07a\"> Hotbars anzupassen und zu verwalten:</c><br><br>
+		<c \"#1b6e14\">Umschalten</c><br>Du wechselst, auf welcher Seite der Hotbar Du Dich befindest, indem Du die Auf- und Ab-Pfeile auf der rechten Seite der Leiste verwendest.<br><br><c \"#1b6e14\">Neue Hotbars</c><br>
+		Du kannst neue Hotbars hinzufügen, indem Du die Taste <c \"#83f07a\"> EQ Menu</c> verwenden, <c \"#83f07a\"> Actions,</c> auswählst und dann die Option <c \"#83f07a\"> Hotkeys </c> 1-10.<br><br>
+		<c \"#F07F00\"> Klicke auf "OK", um die Verwaltung Deiner Hotbars zu lernen.</c>",7);
 	}
 	if ($popupid == 7) {
-		quest::popup("Assigning Hotkeys", "<br><c \"#83f07a\">Hotkeys</c> are abilities, actions, and macros th at can be activated with a simple click. There are multiple ways to customize your
-		<c \"#83f07a\">Hotbar</c> using these buttons:<br><br><c \"#1b6e14\">Drag and Drop</c><br>You can move and set <c \"#83f07a\"> Hotkeys</c> by holding down the left mouse button for a moment, and then
-		dragging the icon to the<c \"#83f07a\"> Hotbar.</c> This is especially useful for dragging from your <c \"#83f07a\">Action,</c><c \"#83f07a\"> Alternative Advancement,</c> and <c \"#83f07a\">Spell Gem</c> menus.
-		<br><br><c \"#1b6e14\">Right-Click</c><br>You can right-click an empty<c \"#83f07a\"> Hotbar</c> slot and use <c \"#83f07a\">Assigning Social</c> to assign custom made actions. More about those will
-		be presented in the next section.<br><br><c \"#F07F00\"> Click 'OK' to learn about custom functions for your Hotbars.</c>",8);
+		quest::popup("Hotkeys zuweisen", "<br><c \"#83f07a\">Hotkeys</c> sind Fähigkeiten, Aktionen und Makros, die mit einem einfachen Klick aktiviert werden können. Es gibt mehrere Möglichkeiten zur Anpassung Deiner 
+		<c \"#83f07a\">Hotbar</c> mittels dieser Schaltflächen:<br><br><c \"#1b6e14\">Drag und Drop</c><br>Du kannst <c \"#83f07a\"> Hotkeys</c> verschieben, indem Du die linke Maustaste einen Moment lang gedrückt hälst und dann
+		das Symbol auf die<c \"#83f07a\"> Hotbar ziehst.</c> Dies ist besonders nützlich für das Ziehen aus Deinen Menüs <c \"#83f07a\">Aktion,</c><c \"#83f07a\">Alternative Weiterentwicklung,</c> und <c \"#83f07a\">Zaubersprüche</c>.
+		<br><br><c \"#1b6e14\">Rechts-Klick</c><br>Du kannst mit der rechten Maustaste auf einen leeren<c \"#83f07a\"> Hotbar</c>-Slot klicken und über <c \"#83f07a\">Assigning Social</c> benutzerdefinierte Aktionen zuweisen. Mehr über diese werden wird im nächsten Abschnitt vorgestellt.<br><br><c \"#F07F00\"> Klicke auf 'OK', um mehr über benutzerdefinierte Funktionen für Deine Hotbars zu erfahren.</c>",8);
 	}
 	if ($popupid == 8) {
-		quest::popup("Custom Hotkeys", "<br>Dragging existing abilities and assigning default actions is only the first step. You can also create your own <c \"#83f07a\">Hotkeys</c>! You can use
-		your <c \"#83f07a\">Action</c> menu to access the <c \"#83f07a\">Socials Page</c>.<br><br><c \"#F07F00\"> Click 'OK' to learn about personalizing your Hotbars.</c>",9);
+		quest::popup("Benutzerdefinierte Hotkeys", "<br>Das Ziehen vorhandener Fähigkeiten und Zuweisen von Standardaktionen ist nur der erste Schritt. Du kannst auch Deine eigenen <c \"#83f07a\">Hotkeys</c> erstellen! Du kannst
+		Dein <c \"#83f07a\">Action</c> Menü nutzen, um auf die <c \"#83f07a\">Social-Seite</c> zuzugreifen.<br><br><c \"#F07F00\"> Klicke auf 'OK', um mehr über die Personalisierung Deiner Hotbars zu erfahren.</c>",9);
 	}
 	if ($popupid == 9) {
-		quest::popup("Personalizing the Hotbar", "<br>You can personalize your <c \"#83f07a\">Hotkeys</c> by using the extended right-click menu. Hold down the right mouse button over an
-		existing <c \"#83f07a\">Hotkey</c> to see the options:<br><br><c \"#1b6e14\">Activate</c><br>This uses the key as if you had left-clicked on it.<br><br><c \"#1b6e14\">Clear</c><br>This removes the key.
-		<br><br><c \"#1b6e14\">Assign Icon</c><br>Select an icon you want from the entire library of Icons.<br><br><c \"#1b6e14\">Clear Icon</c><br>This removes the custom icon.<br><br><c \"#1b6e14\">Assign Label</c><br>
-		This changes the text on the key.<br><br><c \"#1b6e14\">Assign Social</c><br>This lets you put a custom ability created on the <c \"#83f07a\">Socials Page</c> into the <c \"#83f07a\">Hotbar</c> directly.<br><br>
-		<c \"#1b6e14\">Change Size</c><br>This lets you resize and scale the entire<c \"#83f07a\"> Hotbar.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>This lets you forget a memorized spell. Only works
-		on spell gem <c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Click 'OK' to complete the tutorial on  Hotbars.</c>");
+		quest::popup("Personalisierung der Hotbar", "<br>Du kannst Deine <c \"#83f07a\">Hotkeys</c> personalisieren, indem Du das erweiterte Rechtsklickmenü verwendest. Halte die rechte Maustaste über einem
+		bestehenden <c \"#83f07a\">Hotkey</c> gedrückt, um die Optionen zu sehen:<br><br><c \"#1b6e14\">Activate</c><br>Dadurch wird die Taste so verwendet, als ob Du mit der linken Maustaste darauf geklickt hättest.<br><br><c \"#1b6e14\">Clear</c><br>Dadurch wird die Taste entfernt.
+		<br><br><c \"#1b6e14\">Assign Icon</c><br>Wähle ein gewünschtes Symbol aus der gesamten Bibliothek der Symbole aus.<br><br><c \"#1b6e14\">Clear Icon</c><br>Dadurch wird das benutzerdefinierte Symbol entfernt.<br><br><c \"#1b6e14\">Assign Label</c><br>
+		Dadurch wird der Text auf der Taste geändert.<br><br><c \"#1b6e14\">Assign Social</c><br>Damit kannst Du eine benutzerdefinierte Fähigkeit, von der <c \"#83f07a\">Socials Seite</c> direkt auf die <c \"#83f07a\">Hotbar</c> ziehen.<br><br>
+		<c \"#1b6e14\">Change Size</c><br>Damit kannst Du die Größe und Skalierung der gesamten<c \"#83f07a\"> Hotbar verändern.</c><br><br><c \"#1b6e14\">Unmemorize</c><br>Damit kannst Du einen gespeicherten Zauberspruch vergessen. Funktioniert nur auf Zauber-<c \"#83f07a\">Hotkeys.</c><br><br><c \"#F07F00\"> Klicke auf 'OK', um die Anleitung für Hotbars abzuschließen.</c>");
 		quest::updatetaskactivity(290,1);
 	}
 	if ($popupid == 10) {
-		quest::popup("Swimming", "<br>When underwater, your remaining air is shown in the <c \"#1b6e14\">Air Remaining</c> window. If your air supply runs out, you will begin taking damage.<br><br>
-		As your swimming skill increases, so will your air supply and swimming speed. The more time you spend in the water, the better swimmer you will become!");
+		quest::popup("Schwimmen", "<br>Wenn Du unter Wasser bist, wird Deine verbleibende Luft im Fenster <c \"#1b6e14\">Air Remaining</c> angezeigt. Wenn Dein Luftvorrat zur Neige geht, beginnst Du, Schaden zu nehmen.<br><br>
+		Mit zunehmender Schwimmfertigkeit steigt auch Dein Luftvorrat und Deine Schwimmgeschwindigkeit. Je mehr Zeit Du im Wasser verbringst, desto besser wirst Du als Schwimmer!");
 	}
 }	
 
@@ -90,10 +86,10 @@ sub EVENT_TASK_STAGE_COMPLETE
 {
 	if ($task_id == 34)
 	{
-		quest::ze(15, "A cheer arises from the slaves as the last of the Kobold overseers fall.");
+		quest::ze(15, "Ein Jubelschrei ertönt von den Sklaven, als der letzte der Koboldaufseher fällt.");
 	}
   if ($task_id == 28 && $activity_id == 1) {
-    $client->Message(0,"Vahlara bows as you return. 'Just in time. Many are wounded and more arrive by the hour. If you can find any Gloomingdeep silk, bring it to me and I can reward you with more burlap clothing. It's not much, but it's nicer than the rags these kobolds left us with.'");
+    $client->Message(0,"Vahlara verbeugt sich, als du zurückkommst. 'Gerade noch rechtzeitig. Viele sind verwundet und stündlich kommen mehr dazu. Wenn Ihr Gloomingdeep-Seide findet, bringt sie mir, und ich kann Euch mit mehr Sackleinen-Kleidung belohnen. Es ist nicht viel, aber schöner als die Lumpen, mit denen uns diese Kobolde zurückgelassen haben.'");
   }
 } 
 

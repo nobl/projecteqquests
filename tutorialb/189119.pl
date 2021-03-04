@@ -13,7 +13,7 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::emote("A vast mine lays before you. From deep within the mine you can hear the clanging of pulleys and carts. It appears as though they are inhabited . . .");
+	quest::emote("Vor Dir erstreckt sich eine riesige Mine, aus deren Tiefen Du das Klappern von Flaschenzügen und Karren hörst. Es scheint, als wäre sie bewohnt . . .");
 	quest::depop();
 	quest::delglobal("amote");
 	quest::setglobal("amote",2,3,"F");

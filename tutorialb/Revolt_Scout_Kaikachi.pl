@@ -4,10 +4,10 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
     if (quest::istaskactivityactive(21,2)) {
-      quest::say("I'm glad you got dat over and done with. Now we can focus our attention on da kobolds demselves. Here's an invisibility potion we captured from one of Rookfynn's apprentices. May it keep you safe, fr'en'.");
+      quest::say("Ich bin froh, dass du das hinter dich gebracht habt. Jetzt können wir unsere Aufmerksamkeit auf die Kobolde selbst richten. Hier ist ein Unsichtbarkeitstrank, den wir von einem von Rookfynns Lehrlingen erbeutet haben. Möge er dich beschützen, Bruder.");
     }
     else{
-      quest::say("Shhhh. We just swum up thro' da secret tunnel. Not even koboldies know it. Lead 'em back 'ere and we'll bash 'em good.");  
+      quest::say("Schhhh. Wir sind gerade durch den geheimen Tunnel geschwommen. Nicht mal die Kobolde wissen es. Führ sie hierher zurück und wir machen sie fertig.");  
       quest::taskselector(20, 21);
     }
   }
@@ -15,12 +15,12 @@ sub EVENT_SAY {
 
 sub EVENT_TASKACCEPTED {
   if($task_id == "20") {
-    quest::say("Most of da slaves who limp back ta dis cavern are still bound in chains. Our blades are dull from breaking all da kobolds bonds. We needs ya ta find da kobold locksmith and steals his key ring. Da smith iz an albino kobold dat spends most of 'is time near da Gloomingdeep Jail");
+    quest::say("Die meisten Sklaven, die in diese Höhle zurückhumpeln, sind immer noch in Ketten gefesselt. Unsere Klingen sind stumpf vom Brechen der Koboldfesseln. Du musst den Kobold-Schlosser finden und seinen Schlüsselring stehlen. Der Schmied ist ein Albino-Kobold, der die meiste Zeit in der Nähe des Gloomingdeep-Gefängnisses verbringt.");
   }
   if($task_id == "21") {
-    quest::say("When da revolt first began, we thought da goblins slaves were wit' us. Turns out da goblins' former leader, a shaman named Rookfynn, secretly told hiz kindred to help da Gloomingdeep kobolds suppress our revolt.");
-    quest::say("Rookfynn hopes to gain favor with the koboldies for his loyalty. Slay Rookfynn and ten of his treacherous kindred. Da only thing worse than a goblin is a goblin loyal to a slave master.");
-    quest::say("The goblins are busy excavating at Dig Site One. Rookfynn is likely wit' them.");
-    quest::say("Good luck, fr'en'.");
+    quest::say("Als die Revolte begann, dachten wir, die Goblinsklaven wären auf unserer Seite. Es stellte sich heraus, dass der frühere Anführer der Goblins, ein Schamane namens Rookfynn, seinen Verwandten heimlich befohlen hatte, den Gloomingdeep-Kobolden bei der Niederschlagung unserer Revolte zu helfen.");
+    quest::say("Rookfynn hofft, durch seine Loyalität die Gunst der Kobolde zu gewinnen. Töte Rookfynn und zehn seiner verräterischen Verwandten. Das Einzige, was schlimmer ist als ein Kobold, ist ein Kobold, der einem Sklavenhalter gegenüber loyal ist.");
+    quest::say("Die Goblins sind mit Ausgrabungen an Grabungsstätte 1 beschäftigt. Rookfynn ist wahrscheinlich bei ihnen.");
+    quest::say("Viel Glück, mein Freund.");
   }
 }

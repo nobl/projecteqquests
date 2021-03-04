@@ -3,18 +3,18 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i && quest::istaskactivityactive(22,5)) {
-    quest::say("There are many members of the revolt that can aid you as you combat the kobolds.  A new soldier like yourself won't last long without friends!");
-    quest::say("The trick to talking to other adventurers is to go through proper channels.  No one likes a hothead who begs for coins by shouting at everyone in earshot. . .   But if you ask nicely, you can get others to team up with you on your adventures.");
-    quest::say("The dangers of combat and the adventuring lifestyle can sometimes bring out the worst in people.  It's important to keep a cool head and only shout when absolutely necessary.");
-    quest::say("Good luck out there, friend.  I'm sure you'll do fine!");
-    quest::say("The command /shout will allow you to shout in a large radius. The command /ooc will allow you to talk out of character across the entire world.  The /tell command is to allow you to talk to only one person without anyone else hearing it. The /say command lets you talk to others in your immediate area.");
+    quest::say("Es gibt viele Mitglieder der Revolte, die Dich im Kampf gegen die Kobolde unterstützen können.  Ein neuer Soldat wie Du wird nicht lange ohne Freunde überleben!");
+    quest::say("Der Trick, um mit anderen Abenteurern zu sprechen, besteht darin, die richtigen Wege zu gehen.  Niemand mag einen Hitzkopf, der um Münzen bettelt, indem er jeden in Hörweite anbrüllt. . .   Aber wenn Du nett fragst, kannst Du andere dazu bringen, sich Dir bei Deinen Abenteuern anzuschließen.");
+    quest::say("Die Gefahren des Kampfes und des Abenteurerlebens können manchmal das Schlimmste in den Menschen hervorbringen.  Es ist wichtig, einen kühlen Kopf zu bewahren und nur zu schreien, wenn es absolut notwendig ist.");
+    quest::say("Viel Glück da draußen, mein Freund.  Ich bin sicher, Du wirst es gut machen!");
+    quest::say("Mit dem Befehl /shout kannst Du in einem großen Radius schreien. Der Befehl /ooc ermöglicht es Dir, in der ganzen Welt außerhalb des Charakters zu sprechen.  Der Befehl /tell ermöglicht es Dir, nur mit einer Person zu sprechen, ohne dass es jemand anderes hört. Mit dem Befehl /say kannst Du mit anderen in Ihrer unmittelbaren Umgebung sprechen.");
     quest::updatetaskactivity(22,5);
    }
   elsif ($text=~/hail/i) {
-    quest::say("There are many members of the revolt that can aid you as you combat the kobolds.  A new soldier like yourself won't last long without friends!");
-    quest::say("The trick to talking to other adventurers is to go through proper channels.  No one likes a hothead who begs for coins by shouting at everyone in earshot. . .   But if you ask nicely, you can get others to team up with you on your adventures.");
-    quest::say("The dangers of combat and the adventuring lifestyle can sometimes bring out the worst in people.  It's important to keep a cool head and only shout when absolutely necessary.");
-    quest::say("Good luck out there, friend.  I'm sure you'll do fine!");
-    quest::say("The command /shout will allow you to shout in a large radius. The command /ooc will allow you to talk out of character across the entire world.  The /tell command is to allow you to talk to only one person without anyone else hearing it. The /say command lets you talk to others in your immediate area.");
+    quest::say("Es gibt viele Mitglieder der Revolte, die Dich im Kampf gegen die Kobolde unterstützen können.  Ein neuer Soldat wie Du wird nicht lange ohne Freunde überleben!");
+    quest::say("Der Trick, um mit anderen Abenteurern zu sprechen, besteht darin, die richtigen Wege zu gehen.  Niemand mag einen Hitzkopf, der um Münzen bettelt, indem er jeden in Hörweite anbrüllt. . .   Aber wenn Du nett fragst, kannst Du andere dazu bringen, sich Dir bei Deinen Abenteuern anzuschließen.");
+    quest::say("Die Gefahren des Kampfes und des Abenteurerlebens können manchmal das Schlimmste in den Menschen hervorbringen.  Es ist wichtig, einen kühlen Kopf zu bewahren und nur zu schreien, wenn es absolut notwendig ist.");
+    quest::say("Viel Glück da draußen, mein Freund.  Ich bin sicher, Du wirst es gut machen!");
+    quest::say("Mit dem Befehl /shout kannst Du in einem großen Radius schreien. Der Befehl /ooc ermöglicht es Dir, in der ganzen Welt außerhalb des Charakters zu sprechen.  Der Befehl /tell ermöglicht es Dir, nur mit einer Person zu sprechen, ohne dass es jemand anderes hört. Mit dem Befehl /say kannst Du mit anderen in Ihrer unmittelbaren Umgebung sprechen.");
    }
 }

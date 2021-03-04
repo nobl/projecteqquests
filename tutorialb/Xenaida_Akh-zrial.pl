@@ -20,22 +20,22 @@ sub EVENT_DEATH_COMPLETE
 sub EVENT_SAY {
    if ($text=~/hail/i){
 		if(quest::istaskactivityactive(22,3)) {
-		quest::say("Greetings $name. I need some mushrooms to finish my healing potion for the wounded slaves. I marked the location of some mushrooms on your map. Can you bring one to me. I am rather busy here at the moment.");
-		quest::popup("Maps", "<br><br>You may bring up your map window by pressing the [ <c \"#00c8f0\"> M </c>] key.  You should see the Gloomingdeep Mushrooms labled on your map. You should also see your current position on the map represented by the Arrow(notice if moves as you move).
+		quest::say("Grüße $name. Ich brauche einige Pilze, um meinen Heiltrank für die verwundeten Sklaven fertigzustellen. Ich habe den Standort einiger Pilze auf Deiner Karte markiert. Könntest Du mir bitte einen bringen? Ich bin hier im Moment ziemlich beschäftigt.");
+		quest::popup("Karten", "<br><br>Du kannst Dein Kartenfenster aufrufen, indem Du die Taste [ <c \"#00c8f0\"> M </c>] drückst.  Du solltest die Gloomingdeep Mushrooms auf Deiner Karte sehen. Du solltest auch Deine aktuelle Position auf der Karte sehen, die durch den Pfeil dargestellt wird (achte darauf, ob er sich bewegt, wenn Du Dich bewegst).
 		<br><br>
-		<c \"#F07F00\"> Use your map to find the Gloomingdeep Mushroom. Pick one by</c> <c \"#00c8f0\"> left clicking </c> <c \"#F07F00\">on it, and deliver it to Xenaida to continue.</c>", 111);
+		<c \"#F07F00\"> Verwende Dein Karte, um den Gloomingdeep-Pilz zu finden. Wähle einen aus, indem Du ihn mit der linken Maustaste anklickst, und liefere ihn an Xenaida, um fortzufahren.</c>", 111);
    		}
    }
 }
 
 sub EVENT_ITEM {
    if (plugin::check_handin(\%itemcount, 59955 => 1) && quest::istaskactivityactive(22,3)) {
-    quest::say("Thanks! Very helpful!"); 
+    quest::say("Danke! Sehr hilfreich!"); 
     quest::summonitem(59765); # Item: Shimmering Vial of Vigor
     quest::updatetaskactivity(22,3);
   }
    elsif (plugin::check_handin(\%itemcount, 59955 => 1)) {
-    quest::say("Thanks! Very helpful!"); 
+    quest::say("Danke! Sehr hilfreich!"); 
     quest::summonitem(59765); # Item: Shimmering Vial of Vigor
   }
   plugin::return_items(\%itemcount);

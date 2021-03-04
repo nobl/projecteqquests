@@ -3,6 +3,6 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("As long as blood still flows in my veins, no kobolds shall cross this bridge.");
+    quest::say("Solange noch Blut in meinen Adern fließt, soll kein Kobold diese Brücke überqueren.");
   }
 }

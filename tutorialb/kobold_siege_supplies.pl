@@ -40,7 +40,7 @@ sub EVENT_TIMER
 		}
 		else
 		{		
-			quest::ze(0, "A deafening blast rips throughout the cavern as the kobold supplies explode into a ball of fire.");
+			quest::ze(0, "Ein ohrenbetäubender Knall schallt durch die Höhle, als die Koboldvorräte in einem Feuerball explodieren.");
 			quest::stoptimer("explode");
 			$npc->CameraEffect(3000, 6);
 			$npc->CastSpell(7477, $npc->GetID()); # Spell: Cazic Touch II

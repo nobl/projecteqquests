@@ -3,40 +3,40 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Hello $name. Before the slave revolt, I was forging picks and shovels. Now I'm making weapons so we can fight back. Mainly swords and spears. Simple stuff. If you give me your weapon, I can make you a better one!");
+    quest::say("Hallo $name. Vor der Sklavenrevolte habe ich Hacken und Schaufeln geschmiedet. Jetzt stelle ich Waffen her, damit wir zurückschlagen können. Hauptsächlich Schwerter und Speere. Einfaches Zeug. Wenn du mir deine Waffe gibst, kann ich dir eine bessere machen!");
     quest::updatetaskactivity(22, 1);
-    quest::popup("Weapons", "Absor is a weapon maker. You should already have a weapon equiped from your escape with Arias, but Absor can make it better. Open your inventory and remove your weapon from the lower left slot. This is your primary weapon slot where you hold weapons that you are currently using.<br><br><c \"#F07F00\">Give your weapon to Absor to continue.</c>");
+    quest::popup("Waffen", "Absor stellt Waffen her. Du solltest bereits eine Waffe von Deiner Flucht mit Arias ausgerüstet haben, doch Absor kann sie aufwerten. Öffnn Dein Inventar und entferne Deine Waffe aus dem unteren linken Slot. Dies ist Dein primärer Waffenslot, in dem Du Waffen ablegst, die Du gerade benutzt.<br><br><c \"#F07F00\">Gib Absor Deine Waffe, um fortzufahren.</c>");
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 9997 => 1)) { #Dagger*
     quest::summonitem(59950); #Sharpened Dagger
-    quest::emote(" takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
-    quest::say("There you go. That should work much better.");
-    quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window [ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command (CTRL+F) to find the next npc for your basic training.</c>");
+    quest::emote(" nimmt Dir die Waffe ab und beginnt, sie zu polieren und zu wuchten. Als er sie Dir zurückgibt, hat sie kaum noch Ähnlichkeit mit dem verrotteten alten Ding, das Du vorher benutzt hast.");
+    quest::say("Bitteschön. Das sollte viel besser funktionieren.");
+    quest::popup("Waffen", "Absor hat Deine Waffe repariert und wieder in Dein Inventar gelegt. Nimm die verbesserte Waffe aus Deinem Inventar auf und lege sie auf das rechteckige Symbol in der Mitte Deines Inventarfensters. Dadurch wird die Waffe automatisch wieder in Deinem primären Slot ausgerüstet.<br><br><c \"#FFFF00\">Öffne Dein Quest-Fenster [ALT+Q], um den nächsten Schritt Deiner Grundausbildung zu überprüfen.</c><br><br><c \"#F07F00\">Tipp: Benutze den Find-Befehl (STRG+F), um den nächsten NPC für Deine Grundausbildung zu finden.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 9998 => 1)) { #Short Sword*
     quest::summonitem(59951); #Sharpened Short Sword
-    quest::emote(" takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
-    quest::say("There you go. That should work much better.");
-    quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window [ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command (CTRL+F) to find the next npc for your basic training.</c>");
+    quest::emote(" nimmt Dir die Waffe ab und beginnt, sie zu polieren und zu wuchten. Als er sie Dir zurückgibt, hat sie kaum noch Ähnlichkeit mit dem verrotteten alten Ding, das Du vorher benutzt hast.");
+    quest::say("Bitteschön. Das sollte viel besser funktionieren.");
+    quest::popup("Waffen", "Absor hat Deine Waffe repariert und wieder in Dein Inventar gelegt. Nimm die verbesserte Waffe aus Deinem Inventar auf und lege sie auf das rechteckige Symbol in der Mitte Deines Inventarfensters. Dadurch wird die Waffe automatisch wieder in Deinem primären Slot ausgerüstet.<br><br><c \"#FFFF00\">Öffne Dein Quest-Fenster [ALT+Q], um den nächsten Schritt Deiner Grundausbildung zu überprüfen.</c><br><br><c \"#F07F00\">Tipp: Benutze den Find-Befehl (STRG+F), um den nächsten NPC für Deine Grundausbildung zu finden.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 9999 => 1)) { #Club*
     quest::summonitem(59952); #Polished Club
-    quest::emote(" takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
-    quest::say("There you go. That should work much better.");
-    quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window [ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command (CTRL+F) to find the next npc for your basic training.</c>");
+    quest::emote(" nimmt Dir die Waffe ab und beginnt, sie zu polieren und zu wuchten. Als er sie Dir zurückgibt, hat sie kaum noch Ähnlichkeit mit dem verrotteten alten Ding, das Du vorher benutzt hast.");
+    quest::say("Bitteschön. Das sollte viel besser funktionieren.");
+    quest::popup("Waffen", "Absor hat Deine Waffe repariert und wieder in Dein Inventar gelegt. Nimm die verbesserte Waffe aus Deinem Inventar auf und lege sie auf das rechteckige Symbol in der Mitte Deines Inventarfensters. Dadurch wird die Waffe automatisch wieder in Deinem primären Slot ausgerüstet.<br><br><c \"#FFFF00\">Öffne Dein Quest-Fenster [ALT+Q], um den nächsten Schritt Deiner Grundausbildung zu überprüfen.</c><br><br><c \"#F07F00\">Tipp: Benutze den Find-Befehl (STRG+F), um den nächsten NPC für Deine Grundausbildung zu finden.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 55623 => 1)) { #Dull Axe*
     quest::summonitem(59953); #Sharpened Axe
-    quest::emote(" takes the weapon from you and begins to polish and balance it. When he hands it back to you, it scarcely resembles the decayed old thing that you were using.");
-    quest::say("There you go. That should work much better.");
-    quest::popup("Weapons", "Absor has fixed up your weapon and placed it back in your inventory. Pick up the improved weapon in your inventory and drop it on the rectangular icon in the middle of your inventory window. This will auto-equip the weapon back in your primary slot.<br><br><c \"#FFFF00\">Open your Quest Window [ALT+Q] to check the next step in your Basic Training.</c><br><br><c \"#F07F00\">Hint: Use the find command (CTRL+F) to find the next npc for your basic training.</c>");
+    quest::emote(" nimmt Dir die Waffe ab und beginnt, sie zu polieren und zu wuchten. Als er sie Dir zurückgibt, hat sie kaum noch Ähnlichkeit mit dem verrotteten alten Ding, das Du vorher benutzt hast.");
+    quest::say("Bitteschön. Das sollte viel besser funktionieren.");
+    quest::popup("Waffen", "Absor hat Deine Waffe repariert und wieder in Dein Inventar gelegt. Nimm die verbesserte Waffe aus Deinem Inventar auf und lege sie auf das rechteckige Symbol in der Mitte Deines Inventarfensters. Dadurch wird die Waffe automatisch wieder in Deinem primären Slot ausgerüstet.<br><br><c \"#FFFF00\">Öffne Dein Quest-Fenster [ALT+Q], um den nächsten Schritt Deiner Grundausbildung zu überprüfen.</c><br><br><c \"#F07F00\">Tipp: Benutze den Find-Befehl (STRG+F), um den nächsten NPC für Deine Grundausbildung zu finden.</c>");
   }
   elsif (plugin::check_handin(\%itemcount, 54229 => 1)) {
     #Chunk of Bronze -> Bronze Gloomingdeep weapons
-    quest::say("Now let me see... Ah ha! Here ya go! A much better weapon to help fend off those nasties!");
+    quest::say("Jetzt lass mich mal sehen... Ah ha! Da haben wir's ja! Eine viel bessere Waffe, um diese Bösewichte abzuwehren!");
     if($class eq 'Warrior'){quest::summonitem(quest::ChooseRandom(54230,54231,54232));}
     elsif($class eq 'Cleric'){quest::summonitem(54232);}
     elsif($class eq 'Paladin'){quest::summonitem(quest::ChooseRandom(54231,54232));}
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
   }
   elsif (plugin::check_handin(\%itemcount, 59954 => 1)) {
     #Chunk of Iron -> Iron Gloomingdeep weapons
-    quest::say("Now let me see... Ah ha! Here ya go! A spiffy, new weapon to aid you in your adventures!");
+    quest::say("Jetzt lass mich mal sehen... Ah ha! Da haben wir's ja! Eine schicke, neue Waffe, die Dir bei deinen Abenteuern hilft!");
     if($class eq 'Warrior'){quest::summonitem(quest::ChooseRandom(54235,54236,54237));}
     elsif($class eq 'Cleric'){quest::summonitem(54237);}
     elsif($class eq 'Paladin'){quest::summonitem(quest::ChooseRandom(54236,54237));}

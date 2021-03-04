@@ -3,7 +3,7 @@
 # items: 67111, 67125, 67104, 67118, 54234, 54217, 54218, 54219, 54220, 54221, 54222, 54223, 54225, 54226, 54227, 54228, 86010
 sub EVENT_SAY {
   if (quest::istaskactivityactive(17,3)) {
-    quest::say("Well done. The revolt's food supply is safe for the time being. Report back to the guards when you're rested.");
+    quest::say("Gut gemacht. Der Nahrungsvorrat der Revolte ist vorerst sicher. Melde Dich bei den Wachen, wenn Du ausgeruht bist.");
   }
   else {
     if (defined($qglobals{amote}) && ($qglobals{amote} == 2)) { #Emote spawnwer "Vast"
@@ -27,37 +27,37 @@ sub EVENT_SAY {
 		quest::summonitem(67118); # Item: Gloomingdeep Kobold Leather Sleeves
 		}
       }
-      quest::say("I'm glad you managed to escape the slave warrens in one piece. There are many [" . quest::saylink("others") . "] who were not as lucky. Here, take this armor we found on a kobold. It's not much, but it should keep you safe");
-      quest::popup("Equipping Armor", "Vahlara has offered you a piece of kobold armor to keep you safe.
-                    <br><br>Equip the armor by dropping it into the large rectangular icon in the center of your inventory
-                    (<c \"#00c8f0\"> i</c> ) window.  Notice that your armor automatically moves to its proper armor slot on your body.<br><br> Also note that some armor you will later obtain can only be equipped by placing it directly in its corresponding slot, e.g. dropping a breastplate onto the \"chest\" icon in your inventory. When you do this, the armor will become \"attuned\" to your character, and you will no longer be able to trade it with other players.
-					<br><br> <c \"#F07F00\">Once you have equipped the armor, respond to Vahlara's dialogue in your Main Chat window to continue.</c>");
+      quest::say("Ich bin froh, dass Du es geschafft hast, den Sklavenlagern in einem Stück zu entkommen. Es gibt viele [" . quest::saylink("andere") . "], die nicht so viel Glück hatten. Hier, nimm diese Rüstung, die wir bei einem Kobold gefunden haben. Es ist nicht viel, aber es sollte Dir Sicherheit bieten.");
+      quest::popup("Rüstung ausrüsten", "Vahlara hat Dir ein Stück Kobold-Rüstung angeboten, um Dich zu beschützen.
+                    <br><br>Rüste die Rüstung aus, indem Du sie in das große rechteckige Symbol in der Mitte Deines Inventars (<c \"#00c8f0\"> i</c> ) ziehst und ablegst.
+  Beachte, dass die Rüstung automatisch in den entsprechenden Rüstungsplatz an Deinem Körper wandert.<br><br> Beachte auch, dass einige Rüstungen, die Du später erhältst, nur ausgerüstet werden können, indem Du sie direkt in den entsprechenden Platz legst, z.B. indem Du einen Brustpanzer auf das \"Brust\"-Icon in Deinem Inventar ablegst. Wenn Du dies tust, wird die Rüstung auf Deinen Charakter \"abgestimmt\" und Du kannst sie nicht mehr mit anderen Spielern tauschen.
+					<br><br> <c \"#F07F00\">Sobald Du die Rüstung ausgerüstet hast, antworte auf Vahlaras Dialog in Deinem Hauptchatfenster, um fortzufahren.</c>");
     }
-    if ($text=~/others/i) {
+    if ($text=~/andere/i) {
       if(quest::istaskactivityactive(22,2)) {
         quest::updatetaskactivity(22,2);
       }
-      quest::say("These few here. They were injured when the revolt broke out. I'm trying to help, but we have a short supply of [" . quest::saylink("bandages") . "], and more wounded keep coming. I fear many will not survive the hour.");
-      quest::popup("Equipping Armor", "Now that you have your sleeves equiped notice in your inventory window 
-                    that your Armor Class or \"AC\" went up.  The higher your Armor Class the harder it will be for your 
-                    enemies to hit you.<br><br>Vahlara can make you more armor if you are able to bring her pieces of 
-                    Gloomingdeep Spider Silk from the mines beyond.<br><br><c \"#F07F00\">Open your Quest Window [ALT+Q]
-                    to check the next step in your Basic Training.</c>");
+      quest::say("Diese wenigen hier. Sie wurden verletzt, als der Aufstand ausbrach. Ich versuche zu helfen, aber wir haben einen knappen Vorrat an [" . quest::saylink("Verbandmaterial") . "], und es kommen immer mehr Verwundete. Ich fürchte, viele werden die Stunde nicht überleben.");
+      quest::popup("Rüstung ausrüsten", "Jetzt, da Du die Ärmel ausgerüstet hast, bemerkst Du in Deinem Inventarfenster 
+                    dass Deine Rüstungsklasse oder \"AC\" gestiegen ist.  Je höher Deine Rüstungsklasse ist, desto schwieriger wird es für Deine 
+                    Feinde, Dich zu treffen.<br><br>Vahlara kann Dir mehr Rüstung machen, wenn Du es schaffst, ihr Stücke von 
+                    Gloomingdeep Spider Silk aus den jenseitigen Minen zu holen.<br><br><c \"#F07F00\">Öffne Dein Questfenster [ALT+Q]
+                    , um den nächsten Schritt in deiner Grundausbildung zu überprüfen.</c>");
     }
-    if ($text=~/bandages/i) {
-      quest::say("I was a skilled tailor before I was enslaved, so I'm able to weave spider silk into makeshift gauzes and dressings. But now even the spiderling silk is running scarce. If you can find three pieces of spiderling silk, bring them to me unstacked, and I'll give you some armor I've crafted from burlap. Burlap's no good for bandages anyway.");
+    if ($text=~/Verbandmaterial/i) {
+      quest::say("Bevor ich versklavt wurde, war ich eine geschickte Schneiderin und konnte daher Spinnenseide zu notdürftigen Netzen und Verbänden weben. Aber jetzt wird sogar die Spinnlingseide knapp. Wenn Du drei Stücke Spinnlingseide findest, bringe sie mir ungestapelt und ich gebe Dir eine Rüstung, die ich aus Sackleinen hergestellt habe. Sackleinen taugt sowieso nicht für Verbände.");
     }
   }
 }
 
 sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 54234 => 1) || plugin::check_handin(\%itemcount, 54234 => 3)) { #Gloomingdeep Silk x 1 or 3
-    quest::say("You have proven most resourceful $name.");
+    quest::say("Du hast Dich als äußerst einfallsreich erwiesen $name.");
     quest::summonitem(quest::ChooseRandom(54217,54218,54219,54220,54221,54222,54223,54225,54226,54227,54228)); #Random Stitched Burlap item
   }
   elsif (plugin::check_handin(\%itemcount, 86010 => 4) || plugin::check_handin(\%itemcount, 86010 => 3) || plugin::check_handin(\%itemcount, 86010 => 2) || plugin::check_handin(\%itemcount, 86010 => 1)) {
     if (quest::istaskactivityactive(28,1)) {
-      quest::say("Ah, yes. Thank you.");
+      quest::say("Ah, ja. Ich danke Dir.");
     }
   }
   plugin::return_items(\%itemcount);

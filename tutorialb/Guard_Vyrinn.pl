@@ -8,7 +8,7 @@
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
-      quest::say("My mate, Rahtiz, and I will hold this position.  We need you to explore the tunnels beyond.");
+      quest::say("Mein Kumpel, Rahtiz, und ich werden diese Position halten.  Wir brauchen dich, um die Tunnel dahinter zu erforschen.");
       quest::taskselector(28,29,33);
    }
 }
@@ -17,7 +17,7 @@ sub EVENT_ITEM {
    if (quest::istaskactivityactive(29,1)) {
       if (plugin::check_handin(\%itemcount, 54604 => 1)) {
          #Gloomingdeep Violet
-         quest::say("Well done, my friend. You have probably saved many lives.");
+         quest::say("Gut gemacht, mein Freund. Du hast wahrscheinlich viele Leben gerettet.");
          quest::updatetaskactivity(29,1);
          quest::exp(12000);
          quest::ding();

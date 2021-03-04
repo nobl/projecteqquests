@@ -5,7 +5,7 @@
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
-      quest::say("Greetings, $name. We're glad you found your way to our camp. We can use all the help we can get!");
+      quest::say("Grüße, $name. Wir sind froh, dass Du den Weg zu unserem Camp gefunden hast. Wir können jede Hilfe gebrauchen, die wir bekommen können!");
       quest::taskselector(34, 35);
    }
 } 

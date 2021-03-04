@@ -5,7 +5,7 @@ sub EVENT_SAY {
       return;
    }
    if ($text=~/hail/i) {
-    quest::say("Shh , I think I hear the kobolds.");
+    quest::say("Pst, ich glaube, ich höre die Kobolde.");
    }
 }
 

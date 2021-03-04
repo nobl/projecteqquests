@@ -6,13 +6,13 @@
 # items: 86011
 
 sub EVENT_SAY {
-   if($text=~/hail/i) {
+   if($text=~/Hail/i) {
       if (quest::istaskactivityactive(32,4)) {
-         quest::emote("smiles as you return. \'Heya, welcome back, frien'. You proving ta be a worthy scout fer our revoltin'. Arias even t'inks you be da one to lead da attack 'ginst da kobold stronghold. We see 'bout dat, tho'. We see...'");
+         quest::emote("lächelt, als Du zurück kommst. \'Heya, willkommen zurück, Freund'. Du hast dich als würdiger Späher für unsere Revolte erwiesen. Arias meinte sogar, du würdest den Angriff auf die Koboldfestung anführen. Aber das werden wir sehen. Wir werden schon sehen...");
          quest::updatetaskactivity(32,4);
       }
       else {
-         quest::say("Shhhh.  We just swum up thro' da secret tunnel.  Not even koboldies know it.  Lead 'em back 'ere and we'll bash 'em good.");
+         quest::say("Schhhh.  Wir sind gerade durch den geheimen Tunnel geschwommen.  Nicht mal die Kobolde wissen es.  Führt sie hierher zurück und wir machen sie fertig.");
         quest::taskselector(31,32);
       }
    }

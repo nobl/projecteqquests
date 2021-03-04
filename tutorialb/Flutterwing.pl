@@ -11,8 +11,8 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   if(plugin::check_handin(\%itemcount, 54603 => 1)) { #Flutterwing's Unhatched Sibling
-    quest::emote("beams with glee.");
-    quest::say("Oh, $name, how can I ever repay such kindness. I will not be alone in this dreadful place after all. Please accept this small token.");
+    quest::emote("strahlt vor Vergnügen.");
+    quest::say("Oh, $name, wie kann ich solche Freundlichkeit je erwidern. Ich werde doch nicht allein sein an diesem schrecklichen Ort. Bitte nimm dieses kleine Zeichen an.");
     quest::exp(500);
     quest::ding();
     if($class eq 'Warrior'){quest::summonitem(38005);}
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
     elsif($class eq 'Berserker'){quest::summonitem(38320);}
   }
   if(plugin::check_handin(\%itemcount, 13014 => 1)) { #Muffin
-    quest::emote("snatches the muffin from you as you barely manage to keep your fingers.");
+    quest::emote("schnappt Dir den Muffin weg, während Du es kaum schaffst, Deine Finger zu behalten.");
     quest::exp(25);
   }
   plugin::return_items(\%itemcount);

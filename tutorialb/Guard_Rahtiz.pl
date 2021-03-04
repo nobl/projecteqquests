@@ -5,12 +5,12 @@
 
 sub EVENT_SAY {
    if (quest::istaskactivityactive(16,2)){
-      quest::say("Well done! If you collected any Gloomingdeep Silk, be sure to give it to Vahlara. She can use it to make bandages for the other wounded slaves. Here are some coins I found on a dead kobold. Good work, my friend!");
+      quest::say("Gut gemacht! Wenn Du Gloomingdeep-Seide gesammelt hast, gib sie unbedingt Vahlara. Sie kann damit Verbände für die anderen verwundeten Sklaven machen. Hier sind ein paar Münzen, die ich bei einem toten Kobold fand. Gute Arbeit, mein Freund!");
    }
    else{
       if ($text=~ /Hail/i){
-         quest::say("Greetings, $name. We're glad you found your way to our camp. We can use all the help we can get!");   
-         quest::say("The Gloomingdeep spider tamer is able to brew anti-venom from a rare flower that grows in gloomingdeep. If we had this flower,we may be able to use it to save the lives of our comardes.");
+         quest::say("Grüße, $name. Wir sind froh, dass Du den Weg zu unserem Camp gefunden hast. Wir können jede Hilfe gebrauchen, die wir bekommen können!");   
+         quest::say("Der Spinnenbändiger von Gloomingdeep ist in der Lage, Anti-Gift aus einer seltenen Blume zu brauen, die in Gloomingdeep wächst. Wenn wir diese Blume hätten, könnten wir damit vielleicht das Leben unserer Kameraden retten.");
          quest::updatetaskactivity(23,0);
       }
    }
@@ -19,27 +19,27 @@ sub EVENT_SAY {
 
 sub EVENT_TASKACCEPTED {
         if($task_id == "16") {
-                quest::say("The kobolds are raising the Gloomfang Spiders to guard these mines. Queen Gloomfang's latest brood recently tore free from their cocoons and now the southern caves are crawling with giant spider.");
-      quest::say("Get in there and clear out those blasted things!");
+                quest::say("Die Kobolde züchten die Gloomfangspinnen, um diese Minen zu bewachen. Die neueste Brut der Königin Gloomfang hat sich kürzlich aus ihren Kokons befreit und nun wimmelt es in den südlichen Höhlen von Riesenspinnen.");
+      quest::say("Geh da rein und räume die verdammten Dinger aus dem Weg!");
         }
    if($task_id == "17") {
-      quest::say("The vermin infesting these tunnels threaten our scarce provisions. If you want to help our revolt, start by clearing the tunnel beyond of rats and bats. Speak with Vahlara when you've finished your hunt and she will reward you with a pair of stitched leggings. They're not much, but they're all we can spare right now.");
+      quest::say("Das Ungeziefer, das diese Tunnel befallen hat, bedroht unsere knappen Vorräte. Wenn Du unserer Revolte helfen willst, beginne damit, den Tunnel hinter mir von Ratten und Fledermäusen zu säubern. Sprich mit Vahlara, wenn Du Deine Jagd beendet hast und sie wird Dich mit einem Paar genähter Leggings belohnen. Das ist zwar nicht viel, aber alles, was wir im Moment entbehren können.");
    } 
    if($task_id == "18") {
-      quest::say("The kobolds will be charging down this passage here. I'll only have time to fire a few arrows before they close to melee. Venture into the tunnels beyond and bring me one more arrow, it might just save my life. The kobolds typically leave extras ammunition in the barrels throughout the mines. Break a few of them open and you'll likely find some arrows we can use.");
+      quest::say("Die Kobolde werden diesen Gang hier hinunterstürmen. Ich werde nur Zeit haben, ein paar Pfeile abzufeuern, bevor sie in den Nahkampf gehen. Wage dich in die Tunnel dahinter und bringe mir einen weiteren Pfeil, er könnte mir das Leben retten. Die Kobolde hinterlassen in der Regel zusätzliche Munition in den Fässern, die überall in den Minen stehen. Brich ein paar von ihnen auf und du wirst wahrscheinlich ein paar Pfeile finden, die wir benutzen können.");
    }
 }
 
 sub EVENT_ITEM {
    if(plugin::check_handin(\%itemcount, 54604 => 1)) {
-          quest::say("Well done $name! We shall start brewing right away.");
+          quest::say("Gut gemacht $name! Wir werden sofort mit dem Brauen beginnen.");
           quest::exp(25);
      }
    elsif(plugin::check_handin(\%itemcount, 8500 => 1)) {
       if(quest::istaskactivityactive(18,0)) {
          quest::updatetaskactivity(18,0);
          if(quest::istaskactivityactive(18,1)) {
-            quest::say("Nice work, I'm sure the others will make good use of these arrows. I found this quiver stashed behind some boxes while out on patrol. I can't hit the wide end of an ogre with a bow, but maybe you can make better use of it.");
+            quest::say("Gute Arbeit, ich bin sicher, die anderen werden diese Pfeile gut gebrauchen können. Ich fand diesen Köcher hinter einigen Kisten versteckt, als ich auf Patrouille war. Ich kann das breite Ende eines Ogers nicht mit einem Bogen treffen, aber vielleicht kannst Du ihn besser nutzen.");
             quest::updatetaskactivity(18,1);
          }   
       }

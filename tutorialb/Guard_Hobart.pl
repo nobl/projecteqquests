@@ -9,7 +9,7 @@
 
 sub EVENT_SAY {
    if($text=~/Hail/i) {
-      quest::say("Greetings, $name. We're glad you found your way to our camp. We can use all the help we can get!");
+      quest::say("Grüße, $name. Wir sind froh, dass Du den Weg zu unserem Camp gefunden habst. Wir können jede Hilfe gebrauchen, die wir bekommen können!");
       if (quest::istaskactivityactive(30,1)) {
          quest::updatetaskactivity(30,1);
          if ($class eq 'Warrior' || $class eq 'Cleric' || $class eq 'Bard' || $class eq 'Shadowknight' || $class eq 'Paladin') {
@@ -33,7 +33,7 @@ sub EVENT_SAY {
          quest::ding();
       }
       elsif (quest::istaskactivityactive(33,1)) {
-         quest::say("Excellent work, my friend. Take this potion brewed from Queen Gloomfang's chitin. May it make you strong enough to avenge the many slaves the kobolds have fed her.");
+         quest::say("Ausgezeichnete Arbeit, mein Freund. Nimm diesen Trank, gebraut aus dem Chitin von Königin Gloomfang. Möge er dich stark genug machen, um die vielen Sklaven zu rächen, mit denen die Kobolde sie gefüttert haben.");
          quest::updatetaskactivity(33,1);
          quest::summonitem(77780,4); # Item: Distillate of Celestial Healing II
          quest::exp(25000);
@@ -41,7 +41,7 @@ sub EVENT_SAY {
       }
       elsif (quest::istaskactivityactive(27,4)) {
          quest::updatetaskactivity(27,4);
-         quest::say("Ha Ha!  When I first laid eyes on you, I thought a strong breeze would knock you over.  Now, look at you!  The hero of the Gloomingdeep slave revolt!");
+         quest::say("Ha Ha!  Als ich Dich zum ersten Mal sah, dachte ich, eine starke Brise würde Dich umwerfen.  Nun, sieh Dich an!  Der Held der Gloomingdeep-Sklavenrevolte!");
          if ($class eq 'Warrior' || $class eq 'Cleric' || $class eq 'Bard' || $class eq 'Shadowknight' || $class eq 'Paladin') {
             quest::summonitem(82929); # Item: Gloomiron Greaves
             #Gloomiron Greaves

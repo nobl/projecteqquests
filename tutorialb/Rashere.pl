@@ -3,20 +3,20 @@
 
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("Did you know that when you die your soul can be recalled to your last bind spot? Well it can and that is exactly my purpose on this world. I can [" . quest::saylink("bind") . "] your soul so that after death you will be brought to life again in this spot.");
+    quest::say("Wusstest Du, dass Deine Seele, wenn Du stirbst, an Ihren letzten Bindungspunkt zurückgerufen werden kann? Nun, das kann sie und genau das ist meine Aufgabe auf dieser Welt. Ich kann Deine Seele an diesen Ort zu [" . quest::saylink("binden") . "], dass Du nach dem Tod an dieser Stelle wieder zum Leben erweckt wirst.");
   }
-  if ($text=~/bind/i) {
+  if ($text=~/binden/i) {
     quest::selfcast(35);
   }
-  if ($text=~/siblings/i) {
-    quest::say("Slavemaster Ruga has the rest of the dragon eggs on his person. He's in the Gloomingdeep jail trying to prevent the rest of the slaves from escaping. Be careful with Ruga though. That kobold's never without his bodyguards nearby!");
+  if ($text=~/Geschwister/i) {
+    quest::say("Sklavenmeister Ruga hat den Rest der Dracheneier bei sich. Er ist im Gloomingdeep-Gefängnis und versucht, den Rest der Sklaven an der Flucht zu hindern. Sei aber vorsichtig mit Ruga. Dieser Kobold hat immer seine Leibwächter in der Nähe!");
     quest::assigntask(36); #Task: Flutterwing's Dilemma
   }
 }
 
 sub EVENT_SIGNAL {
-  quest::emote("glances over as you begin talking to the baby dragon.");
-  quest::say("Hey there, $name. That's Flutterwing you're talking to. Cute, isn't he? We just rescued the little guy from the kobolds. Turns out they captured a whole clutch of dragon eggs in hopes of raising the creatures as war animals. If you can recover Flutterwing's unhatched [" . quest::saylink("siblings") . "] he'd be much obliged. Also, the little guy loves muffins so if you've got any go ahead and feed him. Just watch your fingers.");
+  quest::emote("blickt hinüber, als Du beginnst, mit dem Babydrachen zu sprechen.");
+  quest::say("Hallo, $name. Das ist Flutterwing, mit dem du da redest. Niedlich, nicht wahr? Wir haben den kleinen Kerl gerade vor den Kobolden gerettet. Es stellte sich heraus, dass sie ein ganzes Gelege von Dracheneiern gefangen haben, in der Hoffnung, die Kreaturen als Kriegstiere aufzuziehen. Wenn Du Flutterwings ungeschlüpfte [" . quest::saylink("Geschwister") . "] bergen könntest, wäre er Dir sehr dankbar. Außerdem liebt der kleine Kerl Muffins, also wenn Du welche hast, verfüttere Sie an ihn. Pass nur auf Deine Finger auf.");
 }
 
 sub EVENT_ITEM {

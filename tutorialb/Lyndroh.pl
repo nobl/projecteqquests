@@ -1,5 +1,5 @@
 sub EVENT_SAY {
   if ($text=~/hail/i) {
-    quest::say("I found a nice little hole in the wall and was able to form a bank vault from it. If youd like to store anything in there just let me know. OH and dont worry your items will transfer to any other bank you visit.");  
+    quest::say("Ich habe ein nettes kleines Loch in der Wand gefunden und konnte daraus einen Banktresor formen. Wenn Du etwas darin sicher verwahren möchtest, lasse es mich einfach wissen. OH und keine Sorge, alle Deine Gegenstände werden zu jeder anderen Bank übertragen, die Du besuchst.");  
   }
 }

@@ -13,7 +13,7 @@ sub EVENT_SPAWN
 
 sub EVENT_ENTER
 {
-	quest::emote("Screams echo through the mines around you.");
+	quest::emote("Schreie hallen durch die Minenschächte um Dich herum..");
 	quest::depop();
 	quest::delglobal("bmote");
 	quest::setglobal("bmote",2,3,"F");
