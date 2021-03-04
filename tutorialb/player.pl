@@ -30,7 +30,7 @@ sub EVENT_ENTERZONE
 sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjusted at later time, I just browsed greens -Drogerin
 	if ($popupid == 111) { 
 		quest::popup("Karsten", "<br><br> <c \"#94f000\"> Zusätzliche Kartenmerkmale </c>  
-		<br><br> Wenn Du die Sichtbarkeit von Ebenen über oder unter Deiner aktuellen Position ein- oder ausblenden möchtest, kannst Du die Schaltfläche <c \"#00c8f0\"> Height Filter </c> einschalten. Wenn diese Schaltfläche aktiviert ist, werden Orte und Elemente unterhalb eines im Feld \"Low" angegebenen Abstands nicht gezeichnet. Ebenso wird alles, was über dem Abstand \"High\" liegt, nicht gezeichnet.
+		<br><br> Wenn Du die Sichtbarkeit von Ebenen über oder unter Deiner aktuellen Position ein- oder ausblenden möchtest, kannst Du die Schaltfläche <c \"#00c8f0\"> Height Filter </c> einschalten. Wenn diese Schaltfläche aktiviert ist, werden Orte und Elemente unterhalb eines im Feld \"Low\" angegebenen Abstands nicht gezeichnet. Ebenso wird alles, was über dem Abstand \"High\" liegt, nicht gezeichnet.
 		<br><br> Um Beschriftungen auf der Karte ein- oder auszublenden, schalte die Schaltfläche <c \"#00c8f0\"> Labels </c> um.
 		<br><br> Wenn Du in einer Gruppe bist und die Mitglieder Deiner Gruppe auf der Karte sehen möchtest, aktiviere die Schaltfläche <c \"#00c8f0\"> Group </c>. Die Gruppenmitglieder erscheinen in der Karte als grünes <c \"#54f000\"> X</c>'s.");
 	}
@@ -44,7 +44,7 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 	if ($popupid == 2) {
 		quest::popup("Handwerkskunst", "<br> Einige Handwerksrezepte sind komplizierter als andere und erfordern eine höhere Stufe in dem Handwerk, das Du ausüben möchtest.
 		<br><br> Wenn Deine Stufe nicht hoch genug ist, um ein bestimmtes Rezept zu versuchen, wirst Du wahrscheinlich bei der Kombination scheitern. Wenn dies geschieht, verlierst Du oft einige oder alle Zutaten, die Du für die Kombination verwendet hast.
-		<br><br><c \"#F07F00\"> Klicke auf "OK", um mehr über die verschiedenen Arten von Handwerksfertigkeiten zu erfahren.",3);
+		<br><br><c \"#F07F00\"> Klicke auf 'OK', um mehr über die verschiedenen Arten von Handwerksfertigkeiten zu erfahren.",3);
 	}
 	if ($popupid == 3) {
 		quest::popup("Handwerkskunst", "<br> Es gibt viele verschiedene Arten von Handwerksberufen, die Du ausüben kannst, einschließlich Backen, Töpfern, Pfeil und Bogen Bau, Schmieden und Schneidern. Du kannst alle möglichen Gegenstände mit diesen Fertigkeiten herstellen.
@@ -55,7 +55,7 @@ sub EVENT_POPUPRESPONSE { ## color of "Additional Map Features may  need adjuste
 		quest::popup("Hotbars verwalten", "<br> Es gibt mehrere Möglichkeiten, Deine <c \"#83f07a\"> Hotbars anzupassen und zu verwalten:</c><br><br>
 		<c \"#1b6e14\">Umschalten</c><br>Du wechselst, auf welcher Seite der Hotbar Du Dich befindest, indem Du die Auf- und Ab-Pfeile auf der rechten Seite der Leiste verwendest.<br><br><c \"#1b6e14\">Neue Hotbars</c><br>
 		Du kannst neue Hotbars hinzufügen, indem Du die Taste <c \"#83f07a\"> EQ Menu</c> verwenden, <c \"#83f07a\"> Actions,</c> auswählst und dann die Option <c \"#83f07a\"> Hotkeys </c> 1-10.<br><br>
-		<c \"#F07F00\"> Klicke auf "OK", um die Verwaltung Deiner Hotbars zu lernen.</c>",7);
+		<c \"#F07F00\"> Klicke auf 'OK', um die Verwaltung Deiner Hotbars zu lernen.</c>",7);
 	}
 	if ($popupid == 7) {
 		quest::popup("Hotkeys zuweisen", "<br><c \"#83f07a\">Hotkeys</c> sind Fähigkeiten, Aktionen und Makros, die mit einem einfachen Klick aktiviert werden können. Es gibt mehrere Möglichkeiten zur Anpassung Deiner 
